@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html><head>
+<script type="text/javascript">
+<!--
+function watermark(inputId,text){
+  var inputBox = document.getElementById(inputId);
+    if (inputBox.value.length > 0){
+			inputBox.style.color = 'black'
+      if (inputBox.value == text) {
+				inputBox.style.color = 'black'
+        inputBox.value = '';
+			}
+    }
+    else {
+			inputBox.style.color = "#c0c0c0";
+      inputBox.value = text;
+		}
+}
+//-->
+</script>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="chrome=1"><title>Lifenotes by bywong</title>
 
@@ -9,32 +28,14 @@
 <!--[if lt IE 9]> <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 </head>
 <body>
+
 <div class="wrapper"> 
 <header> 
 <h1>Lifenotes</h1>
-<p>important little things in life …</p>
-<p class="view"><a href="https://github.com/bywong/lifenotes">View the Project
-on GitHub <small>bywong/lifenotes</small></a></p>
-<ul>
-<li><a href="https://github.com/bywong/lifenotes">View
-On <strong>GitHub</strong></a></li>
-</ul>
-</header>
-<section>
-
-<form method="post" name="NewNote">
-<h3>Compose a new note</h3>
-<p><input name="note" size="50"> for
-<select name="timeNoteList"><option>college days</option><option>growing up</option><option>my career</option></select>
-</p>
-Post it to&nbsp;<input name="lifenotes" value="lifenotes" type="submit"> <input name="facebook" value="facebook" type="submit">&nbsp;<input name="twitter" value="twitter" type="submit">&nbsp;
-</form>
-<br>
-<form method="post" name="NewNote">
-<h3>Create a new timenote</h3>
-<input name="note" size="20"> <input name="create" value="create timenote" type="submit">
-</form>
+<p>important little things in life ...</p>
 <p>
+<p>
+<div class="box1">
 <h3>Time
 notes</h3>
 <ul>
@@ -45,12 +46,35 @@ up</a></li>
 <li><a href="https://github.com/bywong/lifenotes">my
 career</a></li>
 </ul>
-<p>You are viewing <strong>my career</strong>
+<input class="textbox" id="compose_timenote" value="compose a new timenote" name="timenote" size="20" onfocus="watermark('compose_timenote','compose a new timenote');" onblur="watermark('compose_timenote','compose a new timenote');"> <input name="create" value="create new" type="submit">
+<br>or choose from a list of commonly used timenotes <a href="">here</a>
+</div>
+<br><br>
+<a href=""><img src="images/friends.gif" alt="compare with friends" title="compare with friends" border=1 width="40px" height="40px"/></a>
+<a href=""><img src="images/invite.gif" alt="invite a friend" title="invite a friend" border=1 width="40px" height="40px"/></a>
+<a href=""><img src="images/follow.gif" alt="follow a someone" title="follow a someone" border=1 width="40px" height="40px"/></a>
+
+</header>
+
+
+<section>
+
+<form method="post" name="NewNote">
+<div class="box1">
+<h3>Compose a new note</h3>
+<p><input class="textbox" id="compose_note" name="note" size="50" value="compose a new note" onfocus="watermark('compose_note','compose a new note');" onblur="watermark('compose_note','compose a new note');"> for
+<select name="timeNoteList"><option>college days</option><option>growing up</option><option>my career</option></select>
+Post it to&nbsp;</button><img src="images/fbsend.gif" alt="facebook" />&nbsp;<img src="images/twit.gif" alt="twitter" />&nbsp;<img src="images/googlep.gif" alt="google+" />&nbsp;<input type="submit" value="lifenote">
 </p>
+</div>
+</form>
+<p>
+<div class="box1">
+You are viewing <strong>my career</strong>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="1" cellspacing="1">
 <tbody>
 <tr>
-<td>01 Aug 2008</td>
+<td width=100px>01 Aug 2008</td>
 <td>I finally got my first job after countless interviews!
 I'm proud to be a member of ABC Consulting</td>
 </tr>
@@ -71,21 +95,19 @@ reveal my new employer soon.</td>
 </tr>
 </tbody>
 </table>
-
-<h3><a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a></h3>
+</div>
 <br>
-<h3><a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support
-or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a>
+<strong>Support or Contact</strong><br>
+<span class="support1">Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a>
 or contact <a href="mailto:support@github.com">support@github.com</a>
-and we'll help you sort it out.</p>
-
+and we'll help you sort it out.</span>
 </section>
+
 <footer> 
-<p>This project is maintained by <a href="https://github.com/bywong">bywong</a></p>
-<p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>This project is maintained by <a href="https://github.com/bywong">bywong</a><br>
+<small>Hosted on GitHub Pages </small></p>
 </footer>
+
 </div>
 <script src="javascripts/scale.fix.js"></script>
 </body></html>

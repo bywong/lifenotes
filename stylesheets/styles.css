@@ -1,14 +1,26 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 body {
+  background: #e7e7e7 url(../images/bkg1.png) repeat scroll 0 50%;
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
+  color:#000;
   font-weight:300;
 }
 
+.box1 {
+border:0px;
+padding:8px;
+border-radius:10px;
+background: #fafafa;
+}
+
+input.textbox {
+  color:#C0C0C0;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
-  color:#222;
+  color:#000;
   margin:0 0 20px;
 }
 
@@ -21,7 +33,8 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:28px;
+  font-size:38px;
+  color:#0099ff;
 }
 
 h2 {
@@ -32,9 +45,15 @@ h3, h4, h5, h6 {
   color:#494949;
 }
 
-a {
-  color:#39c;
+.support1 {
+  font-size:14px;
   font-weight:400;
+  color:#111;
+}
+
+a {
+  color:#0099ff;
+  font-weight:500;
   text-decoration:none;
 }
 
@@ -79,8 +98,12 @@ table {
 th, td {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
+  border:1px solid #ffffff;
 }
+
+
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)		{ background-color:#fff; }
 
 dt {
   color:#444;
@@ -103,9 +126,8 @@ header {
 
 header ul {
   list-style:none;
-  height:40px;
-  
   padding:0;
+  width: 150px;
   
   background: #eee;
   background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
@@ -118,24 +140,22 @@ header ul {
   border-radius:5px;
   border:1px solid #d2d2d2;
   box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
-  width:270px;
 }
 
 header li {
-  width:89px;
-  float:left;
-  border-right:1px solid #d2d2d2;
+  float:none;
   height:40px;
 }
 
 header ul a {
   line-height:1;
-  font-size:11px;
-  color:#999;
+  font-size:16px;
+  color:#555;
   display:block;
   text-align:center;
   padding-top:6px;
   height:40px;
+  font-weight:700;
 }
 
 strong {
@@ -144,13 +164,10 @@ strong {
 }
 
 header ul li + li {
-  width:88px;
-  border-left:1px solid #fff;
 }
 
 header ul li + li + li {
   border-right:none;
-  width:89px;
 }
 
 header ul a strong {
@@ -171,7 +188,7 @@ small {
 
 hr {
   border:0;
-  background:#e5e5e5;
+  background:#ffffff;
   height:1px;
   margin:0 0 20px;
 }
@@ -179,8 +196,8 @@ hr {
 footer {
   width:270px;
   float:left;
-  position:fixed;
-  bottom:50px;
+	position: fixed;
+  bottom:0px;
 }
 
 @media print, screen and (max-width: 960px) {
@@ -253,3 +270,4 @@ footer {
     color:#444;
   }
 }
+
