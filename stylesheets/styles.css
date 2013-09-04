@@ -130,6 +130,13 @@ header ul {
   width: 250px;
 }
 
+header ol {
+  list-style:square;
+	list-style-position:inside;
+  padding:0;
+  width: 250px;
+}
+
 header li {
   float:none;
   height:30px;

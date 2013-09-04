@@ -55,19 +55,15 @@ function watermark(inputId,text){
 <p>
 <p>
 <div class="box1">
-<h3>Time
-notes</h3>
-
-<ul class="specials">
+<h3>Time notes</h3>
+<ol class="specials">
   <li ng-repeat="message in messages">
     <a href="javascript:alert('{{message}}');">{{message}}</a>
   </li>
-</ul>
-		
-
+</ol>
 <input ng-model="newMessage" id="compose_timenote" value="compose a new timenote" name="timenote" size="20"> 
 <input value="create new" type="submit" ng-click="add()">
-<br>or choose from a list of commonly used timenotes <a href="">here</a>
+<br>or choose from a list of commonly used timenotes <a href="javascript:alert('Not implemented yet');">here</a>
 </div>
 
 <br>
