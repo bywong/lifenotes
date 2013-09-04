@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head>
+<html ng-app="app">
+<head>
 <script type="text/javascript">
 <!--
 function watermark(inputId,text){
@@ -16,7 +17,24 @@ function watermark(inputId,text){
       inputBox.value = text;
 		}
 }
+
 //-->
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+<script language="javascript" type="text/javascript">
+  angular.module('app', []);
+  
+  //Whatever you put on the controller scope,
+  //will be availalble in the HTML element bound to the controller.
+  function MyController($scope){
+    $scope.newMessage = "";
+    $scope.messages = ["college days", "growing up", "my career"]; 
+    
+    $scope.add = function(){
+      $scope.messages.push($scope.newMessage);
+    };
+  }
 </script>
 
 <meta charset="utf-8">
@@ -27,8 +45,8 @@ function watermark(inputId,text){
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <!--[if lt IE 9]> <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 </head>
-<body>
 
+<body ng-controller="MyController">
 <div class="wrapper"> 
 <header> 
 <h1>Lifenotes</h1>
@@ -38,21 +56,36 @@ function watermark(inputId,text){
 <div class="box1">
 <h3>Time
 notes</h3>
-<ul>
-<li><a href="https://github.com/bywong/lifenotes">college
-days</a></li>
-<li><a href="https://github.com/bywong/lifenotes">growing
-up</a></li>
-<li><a href="https://github.com/bywong/lifenotes">my
-career</a></li>
+
+<ul class="specials">
+  <li ng-repeat="message in messages">
+    <a href="javascript:alert('{{message}}');">{{message}}</a>
+  </li>
 </ul>
-<input class="textbox" id="compose_timenote" value="compose a new timenote" name="timenote" size="20" onfocus="watermark('compose_timenote','compose a new timenote');" onblur="watermark('compose_timenote','compose a new timenote');"> <input name="create" value="create new" type="submit">
+		
+
+<input ng-model="newMessage" id="compose_timenote" value="compose a new timenote" name="timenote" size="20"> 
+<input value="create new" type="submit" ng-click="add()">
 <br>or choose from a list of commonly used timenotes <a href="">here</a>
 </div>
+
+<br>
+<div class="box1">
+<h3>Friends</h3>
+<a href=""><img src="images/v1.gif" border=0/></a>
+<a href=""><img src="images/v2.jpg" border=0/></a>
+<a href=""><img src="images/v3.gif" border=0/></a>
+<a href=""><img src="images/v4.gif" border=0/></a>
+<a href=""><img src="images/v5.jpg" border=0/></a>
+<a href=""><img src="images/v6.gif" border=0/></a>
+<a href=""><img src="images/v7.gif" border=0/></a>
+<a href=""><img src="images/v8.gif" border=0/></a>
 <br><br>
 <a href=""><img src="images/friends.gif" alt="compare with friends" title="compare with friends" border=1 width="40px" height="40px"/></a>
 <a href=""><img src="images/invite.gif" alt="invite a friend" title="invite a friend" border=1 width="40px" height="40px"/></a>
 <a href=""><img src="images/follow.gif" alt="follow a someone" title="follow a someone" border=1 width="40px" height="40px"/></a>
+
+</div>
 
 </header>
 
@@ -63,14 +96,21 @@ career</a></li>
 <div class="box1">
 <h3>Compose a new note</h3>
 <p><input class="textbox" id="compose_note" name="note" size="30" value="compose a new note" onfocus="watermark('compose_note','compose a new note');" onblur="watermark('compose_note','compose a new note');"> for
-<select name="timeNoteList"><option>college days</option><option>growing up</option><option>my career</option></select>
-Post it to&nbsp;</button><img src="images/fbsend.gif" alt="facebook" />&nbsp;<img src="images/twit.gif" alt="twitter" />&nbsp;<img src="images/googlep.gif" alt="google+" />&nbsp;<input type="submit" value="lifenote">
+<select class="specials">
+  <option ng-repeat="message in messages">
+    {{message}}
+  </option>
+</select>
+<br>Post it to&nbsp;</button><img src="images/fbsend.gif" alt="facebook" />&nbsp;<img src="images/twit.gif" alt="twitter" />&nbsp;<img src="images/googlep.gif" alt="google+" />&nbsp;<input type="submit" value="lifenote">
 </p>
+
+
+
 </div>
 </form>
 <p>
 <div class="box1">
-You are viewing <strong>my career</strong>
+You are viewing <strong>my career</strong>  <a href="javascript:alert('Graphical timeline yet to be implemented');"><I>[view graphical timeline]</I></a>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="1" cellspacing="1">
 <tbody>
 <tr>
@@ -93,6 +133,14 @@ of work, I deserve this! $$</td>
 <td>Moving on to another company in 10 days' time. I will
 reveal my new employer soon.</td>
 </tr>
+<tr>
+<td>01 May 2012</td>
+<td>My first day of work at Bank DEF.</td>
+</tr>
+<tr>
+<td>19 Aug 2012</td>
+<td>Being transferred to the BA team, team lunch today.</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -101,13 +149,12 @@ reveal my new employer soon.</td>
 <span class="support1">Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a>
 or contact <a href="mailto:support@github.com">support@github.com</a>
 and we'll help you sort it out.</span>
-</section>
-
-<footer> 
+<br>
+<BR><BR>
 <p>This project is maintained by <a href="https://github.com/bywong">bywong</a><br>
 <small>Hosted on GitHub Pages </small></p>
-</footer>
-
+</section>
 </div>
+
 <script src="javascripts/scale.fix.js"></script>
 </body></html>
