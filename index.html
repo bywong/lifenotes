@@ -49,6 +49,7 @@ function watermark(inputId,text){
 <body ng-controller="MyController">
 <div class="wrapper"> 
 <header> 
+<h5><a href="javascript:alert('You can not sign out, I am not done yet :)');">Signout</a> | <a href="javascript:alert('Nice try!');">Sign Up</a></h5>
 <h1>Lifenotes</h1>
 <p>important little things in life ...</p>
 <p>
@@ -101,7 +102,7 @@ notes</h3>
     {{message}}
   </option>
 </select>
-<br>Post it to&nbsp;</button><img src="images/fbsend.gif" alt="facebook" />&nbsp;<img src="images/twit.gif" alt="twitter" />&nbsp;<img src="images/googlep.gif" alt="google+" />&nbsp;<input type="submit" value="lifenote">
+<br>Post it to&nbsp;</button><a href="javascript:alert('Please log in to facebook');"><img src="images/fbsend.gif" alt="facebook" /></a>&nbsp;<a href="javascript:alert('Please log in to twitter');"><img src="images/twit.gif" alt="twitter" /></a>&nbsp;<a href="javascript:alert('Please log in to google+');"><img src="images/googlep.gif" alt="google+" /></a>&nbsp;<input type="submit" value="lifenote" onclick="javascript:alert('Hello! Thanks for clicking');">
 </p>
 
 
